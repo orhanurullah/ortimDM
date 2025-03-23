@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ortimdm.ortimdm.controller.MainController">
+   <top>
+      <MenuBar style="-fx-border-insets: 5; -fx-opacity: 0.9; -fx-padding: 5;">
+         <Menu text="File">
+            <MenuItem fx:id="openFile" onAction="#openFileAction" text="Open" />
+            <MenuItem text="Save" />
+            <SeparatorMenuItem />
+            <MenuItem text="Exit" />
+         </Menu>
+         <Menu text="Edit">
+            <MenuItem text="Cut" />
+            <MenuItem text="Copy" />
+            <MenuItem text="Paste" />
+         </Menu>
+         <Menu text="Help">
+            <MenuItem text="About" />
+         </Menu>
+         <Menu text="Browser">
+            <MenuItem fx:id="openBrowser" onAction="#openBrowserAction" text="Open Browser" />
+         </Menu>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </MenuBar>
+
+   </top>
+   <bottom>
+      <HBox fx:id="footer" accessibleText="status" prefHeight="30.0" prefWidth="800.0" style="-fx-background-color: #f0f0f0; -fx-border-radius: 10; -fx-background-radius: 10; -fx-padding: 10; -fx-spacing: 10; -fx-opacity: 0.7;" BorderPane.alignment="CENTER">
+         <Label fx:id="statusLabel" graphicTextGap="6.0" prefHeight="18.0" prefWidth="800" style="-fx-padding: 6;" text="status" textAlignment="CENTER" textOverrun="CLIP">
+            <font>
+               <Font name="Book Antiqua" size="12.0" />
+            </font>
+            <opaqueInsets>
+               <Insets />
+            </opaqueInsets>
+         </Label>
+      </HBox>
+   </bottom>
+   <center>
+      <AnchorPane prefHeight="406.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+         <HBox prefHeight="182.0" prefWidth="800.0" style="-fx-background-color: yellow;">
+            <children>
+               <VBox alignment="TOP_CENTER" prefHeight="182.0" prefWidth="814.0" style="-fx-background-color: green; -fx-padding: 30; -fx-spacing: 10;">
+                  <TextField alignment="CENTER" focusTraversable="false" opacity="0.82" prefHeight="64.0" prefWidth="800.0" promptText="Enter url..." style="-fx-background-color: yellow; -fx-padding: 10; -fx-background-radius: 6;">
+                     <font>
+                        <Font name="Calibri Bold" size="14.0" />
+                     </font>
+                  </TextField>
+                  <HBox alignment="BASELINE_CENTER" prefHeight="70.0" prefWidth="755.0" style="-fx-spacing: 40; -fx-background-color: white; -fx-opacity: 0.6; -fx-padding: 10;">
+                     <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="63.0" prefWidth="166.0" style="-fx-background-color: orange; -fx-background-radius: 10;" text="Analyze" wrapText="true" />
+                     <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="63.0" prefWidth="166.0" style="-fx-background-color: green; -fx-background-radius: 10;" text="Button" wrapText="true" />
+                  </HBox>
+               </VBox>
+            </children>
+         </HBox>
+         <TabPane cache="true" depthTest="DISABLE" layoutX="1.0" layoutY="182.0" prefHeight="338.0" prefWidth="800.0" rotateGraphic="true" style="-fx-background-color: orange;">
+            <tabs>
+               <Tab closable="false" style="-fx-padding: 8; -fx-border-color: black; -fx-background-color: blue; -fx-cursor: hand;" text="Akış">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="342.0" prefWidth="800.0" style="-fx-background-color: purple;" />
+               </content>
+               </Tab>
+               <Tab closable="false" style="-fx-padding: 8; -fx-border-color: black; -fx-background-color: olive; -fx-cursor: hand;" text="İndirme Seçenekleri">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+               </content>
+               </Tab>
+               <Tab closable="false" style="-fx-padding: 8; -fx-border-color: black; -fx-background-color: red; -fx-cursor: hand;" text="Dikkat">
+                  <content>
+                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                  </content>
+               </Tab>
+            </tabs>
+            <cursor>
+               <Cursor fx:constant="DEFAULT" />
+            </cursor>
+         </TabPane>
+      </AnchorPane>
+   </center>
+</BorderPane>

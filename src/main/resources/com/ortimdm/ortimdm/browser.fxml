@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.web.WebView?>
+
+<?import javafx.scene.Cursor?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.ortimdm.ortimdm.controller.BrowserController"
+            maxHeight="1.7976931348623157E308"
+            maxWidth="1.7976931348623157E308"
+            minHeight="-Infinity"
+            minWidth="-Infinity"
+            prefHeight="600.0"
+            prefWidth="800.0">
+
+   <top>
+      <HBox prefHeight="41.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <TextField alignment="TOP_LEFT" blendMode="MULTIPLY"
+                    fx:id="urlField"
+                    cache="true" cacheHint="SCALE" nodeOrientation="LEFT_TO_RIGHT"
+                    onKeyPressed="#goToUrl"
+                    prefHeight="26.0" prefWidth="590.0" promptText="url girin..."
+                    style="-fx-border-insets: 10; -fx-border-color: #272828; -fx-padding: 10; -fx-background-color: rgba(245,237,237,0.97); -fx-background-insets: 1; -fx-background-radius: 9; -fx-border-radius: 10"
+                    HBox.hgrow="ALWAYS">
+            <font>
+               <Font name="Book Antiqua Bold" size="12.0"/>
+            </font>
+            <cursor>
+               <Cursor fx:constant="TEXT"/>
+            </cursor>
+         </TextField>
+         <Button fx:id="options" text="Opt" onMouseClicked="#getOptions"
+                 style="-fx-border-insets: 10; -fx-border-color: #272828; -fx-padding: 10; -fx-background-color: rgba(245,237,237,0.97); -fx-background-insets: 1; -fx-background-radius: 9; -fx-border-radius: 10"
+         />
+      </HBox>
+   </top>
+
+   <center>
+      <WebView fx:id="webView"/>
+   </center>
+
+</BorderPane>
